@@ -1,12 +1,16 @@
 package controller;
 
 public class MenuController {
-
-    public String enter() {
-        return "🔐 Você entrou no sistema!";
-    }
-
-    public String exit() {
-        return "👋 Você saiu do sistema.";
+    public void options(String choice) {
+        switch (choice.toLowerCase()) {
+            case "entrar":
+                System.out.println("🔐 Você entrou no sistema!");
+                break;
+            case "sair":
+                System.out.println("👋 Você saiu do sistema.");
+                break;
+            default:
+                System.out.println("❌ Opção inválida. Tente novamente.");
+        }
     }
 }

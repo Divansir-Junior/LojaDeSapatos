@@ -9,6 +9,8 @@ public class Menu {
     private final MenuController controller = new MenuController();
 
     public void ShowMainMenu() {
+        Scanner scanner = new Scanner(System.in);
+
         String cyan = "\u001B[36m";
         String green = "\u001B[32m";
         String yellow = "\u001B[33m";
@@ -25,25 +27,11 @@ public class Menu {
                 " |_| \\_| |______|    |_|             |_____/  |_|  |_|  \\____/  |______" + reset);
         System.out.println(cyan + "====================================================================================================" + reset);
         System.out.println(yellow + "DIGITE SUA ESCOLHA:" + reset);
-        System.out.println(green + "ENTRAR" + reset);
-        System.out.println(red + "SAIR" + reset);
+        System.out.println(green + "ENTRAR [0]" + reset);
+        System.out.println(red + "SAIR [1] " + reset);
         System.out.print("👉 ");
-        Scanner scanner = new Scanner(System.in);
 
-
-        String escolha = scanner.nextLine().trim().toLowerCase();
-
-        switch (escolha) {
-            case "entrar":
-                System.out.println(controller.enter());
-                break;
-            case "sair":
-                System.out.println(controller.exit());
-                break;
-            default:
-                System.out.println("❌ Opção inválida. Tente novamente.");
-        }
-
-        scanner.close();
+        String choice = scanner.nextLine();
+        controller.options(choice);
     }
 }
