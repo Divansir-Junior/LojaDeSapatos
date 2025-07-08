@@ -1,4 +1,4 @@
-package com.lojaSapatos.application.controller;
+package com.lojaSapatos.controller;
 
 import org.springframework.stereotype.Component;
 

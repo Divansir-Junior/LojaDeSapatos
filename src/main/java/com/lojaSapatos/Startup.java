@@ -1,7 +1,7 @@
-package com.lojaSapatos.application;
+package com.lojaSapatos;
 
-import com.lojaSapatos.application.view.Menu;
-import com.lojaSapatos.application.controller.MenuController;
+import com.lojaSapatos.view.Menu;
+import com.lojaSapatos.controller.MenuController;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 

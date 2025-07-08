@@ -1,4 +1,4 @@
-package com.lojaSapatos.application.view;
+package com.lojaSapatos.view;
 
 import org.springframework.stereotype.Component;
 
