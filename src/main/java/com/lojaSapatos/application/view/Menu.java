@@ -1,14 +1,13 @@
-package view;
+package com.lojaSapatos.application.view;
 
-import controller.MenuController;
+import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
 
+@Component
 public class Menu {
 
-    private final MenuController controller = new MenuController();
-
-    public void ShowMainMenu() {
+    public String ShowMainMenu() {
         Scanner scanner = new Scanner(System.in);
 
         String cyan = "\u001B[36m";
@@ -28,10 +27,9 @@ public class Menu {
         System.out.println(cyan + "====================================================================================================" + reset);
         System.out.println(yellow + "DIGITE SUA ESCOLHA:" + reset);
         System.out.println(green + "ENTRAR [0]" + reset);
-        System.out.println(red + "SAIR [1] " + reset);
+        System.out.println(red + "SAIR [1]" + reset);
         System.out.print("👉 ");
 
-        String choice = scanner.nextLine();
-        controller.options(choice);
+        return scanner.nextLine();
     }
 }
