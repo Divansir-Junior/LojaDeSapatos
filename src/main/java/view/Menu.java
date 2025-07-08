@@ -12,5 +12,7 @@ public class Menu {
                 " |_| \\_| |______|    |_|             |_____/  |_|  |_|  \\____/  |______");
         System.out.println("====================================================================================================");
         System.out.println("DIGITE SUA ESCOLHA");
+        System.out.println("ENTRAR");
+        System.out.println("SAIR");
     }
 }
