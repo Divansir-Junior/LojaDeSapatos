@@ -13,12 +13,12 @@ public class Colors {
 
     public static String getColor(String nome) {
         return switch (nome.toLowerCase()) {
-            case "vermelho" -> RED;
-            case "verde" -> GREEN;
-            case "amarelo" -> YELLOW;
-            case "azul" -> BLUE;
-            case "ciano" -> CYAN;
-            case "branco" -> WHITE;
+            case "red" -> RED;
+            case "green" -> GREEN;
+            case "yellow" -> YELLOW;
+            case "blue" -> BLUE;
+            case "cyan" -> CYAN;
+            case "white" -> WHITE;
             default -> RESET;
         };
     }
