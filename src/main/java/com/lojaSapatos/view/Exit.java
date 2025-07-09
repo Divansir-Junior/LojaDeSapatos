@@ -1,7 +1,9 @@
 package com.lojaSapatos.view;
 
-public class Exit {
+import util.Colors;
 
+public class Exit {
+    Colors color = new Colors();
     public void exitMenu() {
         System.out.println("\n" +
                 "  ______  __   __  _____   _______   _____   _   _    _____               \n" +
@@ -11,7 +13,7 @@ public class Exit {
                 " | |____   / . \\   _| |_     | |     _| |_  | |\\  | | |__| |    _   _   _ \n" +
                 " |______| /_/ \\_\\ |_____|    |_|    |_____| |_| \\_|  \\_____|   (_) (_) (_)\n" +
                 "                                                                          \n" +
-                "                                                                          \n");
+                "                                                                          \n" + color.);
     }
 
     }
