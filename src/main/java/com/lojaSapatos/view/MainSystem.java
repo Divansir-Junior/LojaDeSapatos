@@ -1,6 +1,7 @@
 package com.lojaSapatos.view;
 
 import org.springframework.stereotype.Component;
+import util.Colors;
 
 @Component
 public class MainSystem {
@@ -18,6 +19,7 @@ public class MainSystem {
                 "║   7 - EXPORT DOC                                                                  ║\n" +
                 "║   [ESC] - RETURN                                                                  ║\n" +
                 "╚═══════════════════════════════════════════════════════════════════════════════════╝\n");
+        System.out.println(Colors.getColor("yellow") + ":" + Colors.RESET);
     }
 
 }
