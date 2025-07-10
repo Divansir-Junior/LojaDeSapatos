@@ -9,6 +9,8 @@
 <hr>
 
 ## Meu principal do programa
+![Imagem do menu  princiapl](imagens/MainMenu.png)
+
 <p>• Nele você pode fazer todas as operações básicas de um CRUD</p>
 <p>• Criar um registro novo de tênis</p>
 <p>• Inserir um novo registro</p>
@@ -17,5 +19,3 @@
 <p>• Filtrar por marca, cor</p>
 <p>• Gerar um arquivo doc, com os dados gerados pelo programa</p>
 <p>• Importar de um arquivo as informações para popular o BANCO DE DADOS</p>
-
-![Imagem do menu  princiapl](imagens/MainMenu.png)
