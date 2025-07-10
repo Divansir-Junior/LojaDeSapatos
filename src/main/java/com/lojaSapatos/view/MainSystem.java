@@ -3,9 +3,11 @@ package com.lojaSapatos.view;
 import org.springframework.stereotype.Component;
 import util.Colors;
 
+import java.util.Scanner;
+
 @Component
 public class MainSystem {
-
+    Scanner sc = new Scanner(System.in);
     public void showMainSystem () {
         System.out.println("╔═══════════════════════════════════════════════════════════════════════════════════╗\n" +
                 "║                                        NETSHOE                                             \n" +
@@ -20,6 +22,7 @@ public class MainSystem {
                 "║   [ESC] - RETURN                                                                  ║\n" +
                 "╚═══════════════════════════════════════════════════════════════════════════════════╝\n");
         System.out.println(Colors.getColor("yellow") + ":" + Colors.RESET);
+
     }
 
 }

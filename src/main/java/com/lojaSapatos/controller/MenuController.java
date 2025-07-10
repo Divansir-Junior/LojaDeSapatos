@@ -2,12 +2,20 @@ package com.lojaSapatos.controller;
 
 import com.lojaSapatos.view.Exit;
 import com.lojaSapatos.view.MainSystem;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MenuController {
-    Exit exit = new Exit();
-    MainSystem mainSystem = new MainSystem();
+
+    private final Exit exit;
+    private final MainSystem mainSystem;
+
+    @Autowired
+    public MenuController(Exit exit, MainSystem mainSystem) {
+        this.exit = exit;
+        this.mainSystem = mainSystem;
+    }
 
     public void options(String choice) {
         switch (choice.toLowerCase()) {

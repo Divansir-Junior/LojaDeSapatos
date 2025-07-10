@@ -1,7 +1,8 @@
 package com.lojaSapatos.view;
 
+import org.springframework.stereotype.Component;
 import util.Colors;
-
+@Component
 public class Exit {
 
     public void exitMenu() {
