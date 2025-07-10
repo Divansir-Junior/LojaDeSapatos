@@ -1,17 +1,20 @@
 package com.lojaSapatos.controller;
 
 import com.lojaSapatos.view.Exit;
+import com.lojaSapatos.view.MainSystem;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MenuController {
     Exit exit = new Exit();
+    MainSystem mainSystem = new MainSystem();
 
     public void options(String choice) {
         switch (choice.toLowerCase()) {
             case "login":
             case "0":
                 System.out.println("🔐 Você entrou no sistema!");
+                mainSystem.showMainSystem();
                 break;
             case "exit":
             case "1":
