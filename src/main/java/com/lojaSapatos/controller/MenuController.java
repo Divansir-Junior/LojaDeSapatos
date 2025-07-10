@@ -9,11 +9,11 @@ public class MenuController {
 
     public void options(String choice) {
         switch (choice.toLowerCase()) {
-            case "entrar":
+            case "login":
             case "0":
                 System.out.println("🔐 Você entrou no sistema!");
                 break;
-            case "sair":
+            case "exit":
             case "1":
                 System.out.println("👋 Você saiu do sistema.");
                 exit.exitMenu();
@@ -24,6 +24,6 @@ public class MenuController {
     }
 
     public boolean isExit(String choice) {
-        return choice.equalsIgnoreCase("sair") || choice.equals("1");
+        return choice.equalsIgnoreCase("exit") || choice.equals("1");
     }
 }

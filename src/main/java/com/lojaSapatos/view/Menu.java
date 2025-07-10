@@ -25,9 +25,9 @@ public class Menu {
                 " | |\\  | | |____     | |              ____) | | |  | | | |__| | | |____ \n" +
                 " |_| \\_| |______|    |_|             |_____/  |_|  |_|  \\____/  |______" + reset);
         System.out.println(cyan + "====================================================================================================" + reset);
-        System.out.println(yellow + "DIGITE SUA ESCOLHA:" + reset);
-        System.out.println(green + "ENTRAR [0]" + reset);
-        System.out.println(red + "SAIR [1]" + reset);
+        System.out.println(yellow + ":" + reset);
+        System.out.println(green + "LOGIN [0]" + reset);
+        System.out.println(red + "EXIT [1]" + reset);
         System.out.print("👉 ");
 
         return scanner.nextLine();

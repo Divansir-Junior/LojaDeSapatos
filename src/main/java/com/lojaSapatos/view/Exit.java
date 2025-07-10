@@ -3,7 +3,7 @@ package com.lojaSapatos.view;
 import util.Colors;
 
 public class Exit {
-    Colors color = new Colors();
+
     public void exitMenu() {
         System.out.print(Colors.getColor("yellow") + "===========" +
                 "================================================" +  Colors.RESET);
