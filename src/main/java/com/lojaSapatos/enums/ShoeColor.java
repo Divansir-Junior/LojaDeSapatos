@@ -1,5 +1,6 @@
 package com.lojaSapatos.enums;
 
+
 public enum ShoeColor {
     BLACK("Preto"),
     BLUE("Azul"),
@@ -10,7 +11,6 @@ public enum ShoeColor {
     GREEN("Verde"),
     GOLD("Dourado"),
     BROWN("Marrom"),
-
     WHITE("Branco"),
     GRAY("Cinza"),
     BEIGE("Bege"),
