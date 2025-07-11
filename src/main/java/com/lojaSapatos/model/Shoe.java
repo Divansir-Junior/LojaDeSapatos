@@ -4,7 +4,7 @@ import com.lojaSapatos.enums.ShoeColor;
 import jakarta.persistence.*;
 
 @Entity
-@Table
+@Table(name = "Shoe")
 public class Shoe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +21,7 @@ public class Shoe {
     private int size;
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private ShoeColor shoeColor;
 
     public Shoe() {
