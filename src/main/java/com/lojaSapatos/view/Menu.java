@@ -7,7 +7,7 @@ import java.util.Scanner;
 @Component
 public class Menu {
 
-    public String ShowMainMenu() {
+    public String showMainMenu() {
         Scanner scanner = new Scanner(System.in);
 
         String cyan = "\u001B[36m";

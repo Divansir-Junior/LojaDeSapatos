@@ -49,7 +49,7 @@ public class MainSystemController {
                 break;
 
             case "8":
-                menu.ShowMainMenu();
+                menu.showMainMenu();
                 System.out.println("Saindo");
                 break;
 
