@@ -1,7 +1,7 @@
 package com.lojaSapatos.view;
 
 import org.springframework.stereotype.Component;
-import util.Colors;
+import com.lojaSapatos.util.Colors;
 
 import java.util.Scanner;
 

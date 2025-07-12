@@ -1,4 +1,4 @@
-package util;
+package com.lojaSapatos.util;
 
 public class Colors {
 

@@ -1,9 +1,15 @@
 package com.lojaSapatos.controller;
 
+import com.lojaSapatos.view.Menu;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MainSystemController {
+    private final Menu menu;
+
+    public MainSystemController(Menu menu) {
+        this.menu = menu;
+    }
 
     public void mainOptions(String choice) {
         switch (choice.toLowerCase()) {
@@ -42,7 +48,8 @@ public class MainSystemController {
                 System.out.println("📤 Exportando documento...");
                 break;
 
-            case "esc":
+            case "8":
+                menu.ShowMainMenu();
                 System.out.println("Saindo");
                 break;
 
