@@ -85,4 +85,12 @@ public class MainSystemController {
         Shoe saved = shoeService.saveShoe(shoe);
         System.out.println("✅ Sapato criado com ID: " + saved.getId());
     }
+
+    private void searchShoe() {
+        System.out.println("Nome de busca :");
+        String nameSearch = scanner.nextLine();
+
+
+    }
+
 }
