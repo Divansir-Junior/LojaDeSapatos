@@ -29,6 +29,7 @@ public class MainSystemController {
 
             case "search shoe":
             case "2":
+                searchShoe();
                 System.out.println("🔍 Buscando sapato... (ainda não implementado)");
                 break;
 
@@ -89,6 +90,16 @@ public class MainSystemController {
     private void searchShoe() {
         System.out.println("Nome de busca :");
         String nameSearch = scanner.nextLine();
+
+        Shoe res = shoeService.searchShoeByName(nameSearch);
+
+
+        if (res != null) {
+            System.out.println("✅ Tênis achado: " + res);
+        } else {
+            System.out.println("❌ Nenhum tênis encontrado com esse nome.");
+        }
+
 
 
     }
