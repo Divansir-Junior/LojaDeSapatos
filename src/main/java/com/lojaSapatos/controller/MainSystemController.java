@@ -1,51 +1,61 @@
 package com.lojaSapatos.controller;
 
+import com.lojaSapatos.enums.ShoeColor;
+import com.lojaSapatos.model.Shoe;
+import com.lojaSapatos.services.ShoeService;
 import com.lojaSapatos.view.Menu;
 import org.springframework.stereotype.Component;
 
+import java.util.Scanner;
+
 @Component
 public class MainSystemController {
-    private final Menu menu;
 
-    public MainSystemController(Menu menu) {
+    private final Menu menu;
+    private final ShoeService shoeService;
+    private final Scanner scanner = new Scanner(System.in);
+
+    public MainSystemController(Menu menu, ShoeService shoeService) {
         this.menu = menu;
+        this.shoeService = shoeService;
     }
 
     public void mainOptions(String choice) {
         switch (choice.toLowerCase()) {
             case "create shoe":
             case "1":
-                System.out.println("👟 Criando sapato...");
+                createShoe();
                 break;
 
             case "search shoe":
             case "2":
-                System.out.println("🔍 Buscando sapato...");
+                System.out.println("🔍 Buscando sapato... (ainda não implementado)");
                 break;
 
             case "delete shoe":
             case "3":
-                System.out.println("🗑️ Deletando sapato...");
+                System.out.println("🗑️ Deletando sapato... (ainda não implementado)");
                 break;
 
             case "list all":
             case "4":
                 System.out.println("📋 Listando todos os sapatos...");
+
                 break;
 
             case "filter":
             case "5":
-                System.out.println("🔎 Filtrando resultados...");
+                System.out.println("🔎 Filtrando resultados... (ainda não implementado)");
                 break;
 
             case "import doc":
             case "6":
-                System.out.println("📥 Importando documento...");
+                System.out.println("📥 Importando documento... (ainda não implementado)");
                 break;
 
             case "export doc":
             case "7":
-                System.out.println("📤 Exportando documento...");
+                System.out.println("📤 Exportando documento... (ainda não implementado)");
                 break;
 
             case "8":
@@ -57,5 +67,22 @@ public class MainSystemController {
                 System.out.println("❌ Opção inválida. Tente novamente.");
                 break;
         }
+    }
+
+    private void createShoe() {
+        System.out.print("Nome do sapato: ");
+        String name = scanner.nextLine();
+
+        System.out.print("Tamanho do sapato: ");
+        int size = Integer.parseInt(scanner.nextLine());
+
+        Shoe shoe = new Shoe();
+        shoe.setName(name);
+        shoe.setSize(size);
+        shoe.setBrand("Nike");
+        shoe.setShoeColor(ShoeColor.BROWN);
+
+        Shoe saved = shoeService.saveShoe(shoe);
+        System.out.println("✅ Sapato criado com ID: " + saved.getId());
     }
 }
