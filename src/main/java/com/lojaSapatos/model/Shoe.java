@@ -73,6 +73,21 @@ public class Shoe {
     public void setShoeColor(ShoeColor shoeColor) {
         this.shoeColor = shoeColor;
     }
+
+    @Override
+    public String toString() {
+        return "Shoe{" +
+                "id=" + id +
+                ", nome='" + name + '\'' +
+                ", tamanho=" +  size +
+                "Marca:" + brand +
+                "Cor:" + " " + shoeColor +
+                '}';
+    }
+
+
+
+
 }
 
 
