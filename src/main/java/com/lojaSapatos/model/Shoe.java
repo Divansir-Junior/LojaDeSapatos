@@ -76,18 +76,13 @@ public class Shoe {
 
     @Override
     public String toString() {
-        return "Shoe{" +
-                "id=" + id +
-                ", nome='" + name + '\'' +
-                ", tamanho=" +  size +
-                "Marca:" + brand +
-                "Cor:" + " " + shoeColor +
-                '}';
+        return "Tênis encontrado : Sapato n | " +
+                "NAME = \"" + name + "\" | " +
+                "SIZE = \"" + size + "\" | " +
+                "BRAND = \"" + brand + "\" | " +
+                "COLOR = \"" + shoeColor + "\"\n" +
+                "===============================================================================================";
     }
-
-
-
-
 }
 
 
