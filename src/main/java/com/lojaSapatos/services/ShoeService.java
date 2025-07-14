@@ -42,8 +42,8 @@ public class ShoeService {
         return shoeRepository.findAll();
     }
 
-    public List<Shoe> filterShoe(){
-        return shoeRepository.filter();
+    public Optional<Shoe> filterShoe(String name, String brand, int size) {
+        return shoeRepository.findByNameAndBrandAndSize(name, brand, size);
     }
 
 

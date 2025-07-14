@@ -37,6 +37,13 @@ public class Shoe {
         this.size = size;
     }
 
+    public Shoe(String name, String brand, int size) {
+        this.name = name;
+        this.brand = brand;
+        this.size = size;
+    }
+
+
     public Long getId() {
         return id;
     }

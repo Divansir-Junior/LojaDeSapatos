@@ -7,7 +7,9 @@ import com.lojaSapatos.util.LineMaker;
 import com.lojaSapatos.view.MenuView;
 import org.springframework.stereotype.Component;
 
+import java.sql.SQLOutput;
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 
 @Component
@@ -52,7 +54,7 @@ public class MainSystemController {
 
             case "filter":
             case "5":
-                System.out.println("🔎 Filtrando resultados... (ainda não implementado)");
+                filterShoe();
                 break;
 
             case "import doc":
@@ -76,18 +78,17 @@ public class MainSystemController {
         }
     }
 
-<<<<<<< HEAD
     private void createShoe() {
         System.out.print("Nome do sapato: ");
         String name = scanner.nextLine();
 
+        System.out.println("Marca do tênis : ");
+        String brand = scanner.nextLine();
+
         System.out.print("Tamanho do sapato: ");
         int size = Integer.parseInt(scanner.nextLine());
 
-        Shoe shoe = new Shoe();
-        shoe.setName(name);
-        shoe.setSize(size);
-        shoe.setBrand("Nike");
+        Shoe shoe = new Shoe(name,brand,size);
         shoe.setShoeColor(ShoeColor.BROWN);
 
         Shoe saved = shoeService.saveShoe(shoe);
@@ -131,7 +132,33 @@ public class MainSystemController {
         shoeService.deleteShoe(id);
         return true;
     }
-=======
->>>>>>> Repository_Class
 
+    private void filterShoe() {
+        System.out.println("\n📦 Filtro de Tênis");
+
+        System.out.print("🔤 Nome: ");
+        String name = scanner.nextLine().trim();
+
+        System.out.print("🏷️ Marca: ");
+        String brand = scanner.nextLine().trim();
+
+        System.out.print("📏 Tamanho do tênis: ");
+        int size = scanner.nextInt();
+        scanner.nextLine(); // limpar quebra de linha
+
+        System.out.println("\n🔎 Buscando tênis com os critérios informados...\n");
+
+        Optional<Shoe> resultado = shoeService.filterShoe(name, brand, size);
+
+        resultado.ifPresentOrElse(shoe -> {
+            System.out.println("✅ Tênis encontrado:");
+            System.out.printf("  🆔 ID     : %d%n", shoe.getId());
+            System.out.printf("  👟 Nome   : %s%n", shoe.getName());
+            System.out.printf("  🏷️ Marca  : %s%n", shoe.getBrand());
+            System.out.printf("  📏 Tamanho: %d%n", shoe.getSize());
+
+        }, () -> {
+            System.out.println("❌ Nenhum tênis encontrado com os critérios informados.");
+        });
+    }
 }
