@@ -82,6 +82,10 @@ public class MainSystemController {
         System.out.print("Nome do sapato: ");
         String name = scanner.nextLine();
 
+        System.out.println("Cor do sapato : ");
+        String colorShoe  = scanner.nextLine();
+        ShoeColor chosenColor =ShoeColor.valueOf(colorShoe) ;
+
         System.out.println("Marca do tênis : ");
         String brand = scanner.nextLine();
 
@@ -89,7 +93,7 @@ public class MainSystemController {
         int size = Integer.parseInt(scanner.nextLine());
 
         Shoe shoe = new Shoe(name,brand,size);
-        shoe.setShoeColor(ShoeColor.BROWN);
+        shoe.setShoeColor(chosenColor);
 
         Shoe saved = shoeService.saveShoe(shoe);
         System.out.println("✅ Sapato criado com ID: " + saved.getId());
@@ -109,8 +113,6 @@ public class MainSystemController {
             System.out.println("❌ Nenhum tênis encontrado com esse nome.");
         }
         System.out.println(lineMaker.makeLine());
-
-
     }
 
     private void findAll() {
