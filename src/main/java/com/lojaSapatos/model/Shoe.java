@@ -1,11 +1,14 @@
 package com.lojaSapatos.model;
 
 import com.lojaSapatos.enums.ShoeColor;
+import com.lojaSapatos.util.LineMaker;
 import jakarta.persistence.*;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity
 @Table(name = "Shoe")
 public class Shoe {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
@@ -80,8 +83,8 @@ public class Shoe {
                 "NAME = \"" + name + "\" | " +
                 "SIZE = \"" + size + "\" | " +
                 "BRAND = \"" + brand + "\" | " +
-                "COLOR = \"" + shoeColor + "\"\n" +
-                "===============================================================================================";
+                "COLOR = \"" + shoeColor + "\"\n" ;
+
     }
 }
 
