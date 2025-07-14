@@ -1,15 +1,14 @@
 package com.lojaSapatos.services;
-
-
-
 import com.lojaSapatos.repository.ShoeRepository;
+import jakarta.persistence.Entity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.lojaSapatos.model.Shoe; // ou o caminho real da sua entidade
-
+import java.util.Optional;
 import java.util.List;
 
 @Service
+
 public class ShoeService {
 
    private final ShoeRepository shoeRepository;
@@ -35,7 +34,8 @@ public class ShoeService {
             shoeRepository.deleteById(id);
             return shoe;
         }
-        return null;
+        throw new IllegalArgumentException("ID inválido");
+
     }
 
     public List<Shoe> listAll() {

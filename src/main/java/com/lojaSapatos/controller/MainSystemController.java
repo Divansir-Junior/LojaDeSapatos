@@ -41,7 +41,8 @@ public class MainSystemController {
 
             case "delete shoe":
             case "3":
-                System.out.println("🗑️ Deletando sapato... (ainda não implementado)");
+                System.out.println("Digite o ID PARA DELETAR:");
+                deleteShoe();
                 break;
 
             case "list all":
@@ -103,7 +104,6 @@ public class MainSystemController {
             System.out.println("✅ Tênis achado: " + res);
 
         }
-
         else {
             System.out.println("❌ Nenhum tênis encontrado com esse nome.");
         }
@@ -126,5 +126,10 @@ public class MainSystemController {
         }
     }
 
+    private boolean deleteShoe() {
+        Long id = scanner.nextLong();
+        shoeService.deleteShoe(id);
+        return true;
+    }
 
 }
