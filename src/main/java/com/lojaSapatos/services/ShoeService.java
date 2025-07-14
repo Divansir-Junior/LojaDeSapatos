@@ -28,6 +28,16 @@ public class ShoeService {
         return shoeRepository.findByName(name);
     }
 
+    public Shoe deleteShoe(Long id) {
+        Optional<Shoe> shoeOptional = shoeRepository.findById(id);
+        if (shoeOptional.isPresent()) {
+            Shoe shoe = shoeOptional.get();
+            shoeRepository.deleteById(id);
+            return shoe;
+        }
+        return null;
+    }
+
     public List<Shoe> listAll() {
         return shoeRepository.findAll();
     }
