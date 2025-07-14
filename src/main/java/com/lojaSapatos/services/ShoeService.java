@@ -42,5 +42,9 @@ public class ShoeService {
         return shoeRepository.findAll();
     }
 
+    public List<Shoe> filterShoe(){
+        return shoeRepository.filter();
+    }
+
 
 }
