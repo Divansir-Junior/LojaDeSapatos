@@ -76,6 +76,7 @@ public class MainSystemController {
         }
     }
 
+<<<<<<< HEAD
     private void createShoe() {
         System.out.print("Nome do sapato: ");
         String name = scanner.nextLine();
@@ -130,5 +131,7 @@ public class MainSystemController {
         shoeService.deleteShoe(id);
         return true;
     }
+=======
+>>>>>>> Repository_Class
 
 }
