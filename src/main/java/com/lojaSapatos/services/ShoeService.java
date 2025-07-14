@@ -21,4 +21,10 @@ public class ShoeService {
         return  shoeRepository.save(shoe);
 
     }
+
+    public Shoe searchShoeByName(String name) {
+        return shoeRepository.findByName(name);
+    }
+
+
 }
