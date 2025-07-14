@@ -9,7 +9,7 @@
 <hr>
 
 ## Meu principal do programa
-![Imagem do menu  princiapl](imagens/MainMenu.png)
+![Imagem do menuView  princiapl](imagens/MainMenu.png)
 
 <p>• Nele você pode fazer todas as operações básicas de um CRUD</p>
 <p>• Criar um registro novo de tênis</p>

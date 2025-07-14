@@ -6,7 +6,7 @@ import com.lojaSapatos.util.Colors;
 import java.util.Scanner;
 
 @Component
-public class MainSystem {
+public class MainSystemView {
     Scanner sc = new Scanner(System.in);
     public void showMainSystem () {
         System.out.println("╔═══════════════════════════════════════════════════════════════════════════════════╗\n" +

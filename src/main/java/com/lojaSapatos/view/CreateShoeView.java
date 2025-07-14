@@ -1,6 +1,6 @@
 package com.lojaSapatos.view;
 
-public class CreateShoe {
+public class CreateShoeView {
 
     public void createShoeMenu () {
 

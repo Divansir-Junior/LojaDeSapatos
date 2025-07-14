@@ -2,8 +2,8 @@ package com.lojaSapatos.util;
 
 import com.lojaSapatos.controller.MainSystemController;
 import com.lojaSapatos.controller.MenuController;
-import com.lojaSapatos.view.MainSystem;
-import com.lojaSapatos.view.Menu;
+import com.lojaSapatos.view.MainSystemView;
+import com.lojaSapatos.view.MenuView;
 import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
@@ -11,19 +11,19 @@ import java.util.Scanner;
 @Component
 public class LoopManager {
 
-    private final Menu menu;
+    private final MenuView menuView;
     private final MenuController menuController;
-    private final MainSystem mainSystem;
+    private final MainSystemView mainSystemView;
     private final MainSystemController systemController;
     private final ClearTerminal clearTerminal;
 
-    public LoopManager(Menu menu,
+    public LoopManager(MenuView menuView,
                        MenuController menuController,
-                       MainSystem mainSystem,
+                       MainSystemView mainSystemView,
                        MainSystemController systemController) {
-        this.menu = menu;
+        this.menuView = menuView;
         this.menuController = menuController;
-        this.mainSystem = mainSystem;
+        this.mainSystemView = mainSystemView;
         this.systemController = systemController;
         this.clearTerminal = new ClearTerminal(); // can also be injected if preferred
     }
@@ -36,7 +36,7 @@ public class LoopManager {
             clearTerminal.clsTerminal();
             switch (state) {
                 case "MAIN_MENU" -> {
-                    String input = menu.showMainMenu();
+                    String input = menuView.showMainMenu();
 
                     if (menuController.isExit(input)) {
                         System.out.println("Exiting the system...");
@@ -48,7 +48,7 @@ public class LoopManager {
                 }
 
                 case "SYSTEM_MENU" -> {
-                    mainSystem.showMainSystem();
+                    mainSystemView.showMainSystem();
                     String option = scanner.nextLine().toLowerCase();
 
                     if (option.equals("8")) {

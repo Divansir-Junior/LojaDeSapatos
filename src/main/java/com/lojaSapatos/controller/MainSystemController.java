@@ -4,8 +4,7 @@ import com.lojaSapatos.enums.ShoeColor;
 import com.lojaSapatos.model.Shoe;
 import com.lojaSapatos.services.ShoeService;
 import com.lojaSapatos.util.LineMaker;
-import com.lojaSapatos.view.Menu;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.lojaSapatos.view.MenuView;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -14,14 +13,14 @@ import java.util.Scanner;
 @Component
 public class MainSystemController {
 
-    private final Menu menu;
+    private final MenuView menuView;
     private final ShoeService shoeService;
     private final Scanner scanner = new Scanner(System.in);
 
     private  LineMaker lineMaker;
 
-    public MainSystemController(Menu menu, ShoeService shoeService, LineMaker lineMaker) {
-        this.menu = menu;
+    public MainSystemController(MenuView menuView, ShoeService shoeService, LineMaker lineMaker) {
+        this.menuView = menuView;
         this.shoeService = shoeService;
         this.lineMaker = lineMaker;
     }
@@ -66,7 +65,7 @@ public class MainSystemController {
                 break;
 
             case "8":
-                menu.showMainMenu();
+                menuView.showMainMenu();
                 System.out.println("Saindo");
                 break;
 

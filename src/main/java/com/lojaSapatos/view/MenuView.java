@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import java.util.Scanner;
 
 @Component
-public class Menu {
+public class MenuView {
 
     public String showMainMenu() {
         Scanner scanner = new Scanner(System.in);
