@@ -9,6 +9,6 @@ import java.util.List;
 @Repository
 public interface ShoeRepository  extends JpaRepository <Shoe,Long> {
 
-
+    Shoe filterShoe(String name,String brand,int size);
 
 }
