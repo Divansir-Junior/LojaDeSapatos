@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.lojaSapatos.model.Shoe; // ou o caminho real da sua entidade
 
+import java.util.List;
+
 @Service
 public class ShoeService {
 
@@ -24,6 +26,10 @@ public class ShoeService {
 
     public Shoe searchShoeByName(String name) {
         return shoeRepository.findByName(name);
+    }
+
+    public List<Shoe> listAll() {
+        return shoeRepository.findAll();
     }
 
 

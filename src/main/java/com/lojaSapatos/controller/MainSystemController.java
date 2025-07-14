@@ -8,6 +8,7 @@ import com.lojaSapatos.view.Menu;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Scanner;
 
 @Component
@@ -36,7 +37,6 @@ public class MainSystemController {
             case "search shoe":
             case "2":
                 searchShoe();
-                System.out.println("🔍 Buscando sapato... (ainda não implementado)");
                 break;
 
             case "delete shoe":
@@ -47,7 +47,7 @@ public class MainSystemController {
             case "list all":
             case "4":
                 System.out.println("📋 Listando todos os sapatos...");
-
+                findAll();
                 break;
 
             case "filter":
@@ -99,7 +99,6 @@ public class MainSystemController {
 
         Shoe res = shoeService.searchShoeByName(nameSearch);
 
-
         if (res != null) {
             System.out.println("✅ Tênis achado: " + res);
 
@@ -112,5 +111,20 @@ public class MainSystemController {
 
 
     }
+
+    private void findAll() {
+        List<Shoe> sapatos = shoeService.listAll();
+
+        if (sapatos.isEmpty()) {
+            System.out.println("ERRO");
+            System.out.println("📭 Nenhum sapato encontrado.");
+        } else {
+            System.out.println("📋 Lista de sapatos encontrados:");
+            for (Shoe s : sapatos) {
+                System.out.println(s); // usa o toString da entidade
+            }
+        }
+    }
+
 
 }
