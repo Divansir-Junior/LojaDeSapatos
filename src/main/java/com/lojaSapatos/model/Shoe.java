@@ -1,9 +1,8 @@
 package com.lojaSapatos.model;
 
+import com.itextpdf.text.pdf.PdfPCell;
 import com.lojaSapatos.enums.ShoeColor;
-import com.lojaSapatos.util.LineMaker;
 import jakarta.persistence.*;
-import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity
 @Table(name = "Shoe")
@@ -76,7 +75,7 @@ public class Shoe {
         this.size = size;
     }
 
-    public ShoeColor getShoeColor() {
+    public PdfPCell getShoeColor() {
         return shoeColor;
     }
 
