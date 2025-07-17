@@ -11,17 +11,21 @@ import java.io.FileOutputStream;
 @Service
 public class PdfService {
 
+    // Construtor padrão (caso queira instanciar manualmente sem Spring)
+    public PdfService() {}
+
     public void createPDF(String fileName, String content) {
         Document doc = new Document();
         try {
             PdfWriter.getInstance(doc, new FileOutputStream(fileName));
             doc.open();
 
-            // Header simples (centralizado)
-            Paragraph header = new Paragraph("Relatório de Tênis");
-            header.setAlignment(Element.ALIGN_CENTER);
-            header.setSpacingAfter(15f); // Espaço após o cabeçalho
-            doc.add(header);
+            createHeader(doc);
+            createBodyPDF(doc, "Este é um relatório completo contendo todos os registros presentes na base de dados da NETSHOE©. " +
+                    "O objetivo deste documento é apresentar, de forma clara e organizada, os dados dos produtos atualmente cadastrados " +
+                    "no sistema, incluindo informações como nome, marca, tamanho, cor e demais atributos relevantes. " +
+                    "Esses dados são essenciais para o controle de estoque, análise de vendas e suporte à tomada de decisões estratégicas " +
+                    "por parte da equipe de gestão.");
 
             // Conteúdo principal
             Paragraph paragraph = new Paragraph(content);
@@ -32,6 +36,26 @@ public class PdfService {
         } finally {
             doc.close();
         }
+    }
+
+    private void createHeader(Document doc) throws DocumentException {
+        Font headerFont = new Font(Font.FontFamily.HELVETICA, 16, Font.BOLD, BaseColor.BLUE);
+        Paragraph header = new Paragraph("Relatório NETSHOE",headerFont);
+        header.setAlignment(Element.ALIGN_CENTER);
+        header.setSpacingAfter(15f);
+        doc.add(header);
+    }
+
+    private void createBodyPDF(Document doc,String desc) throws DocumentException {
+        Font bodyFont = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL, BaseColor.BLACK);
+
+        Paragraph bodyContent = new Paragraph(desc,bodyFont);
+        bodyContent.setAlignment(Element.ALIGN_JUSTIFIED);
+
+        bodyContent.setSpacingBefore(10f);
+        bodyContent.setSpacingAfter(10f);
+
+        doc.add(bodyContent);
     }
 
 }
