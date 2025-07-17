@@ -2,6 +2,7 @@ package com.lojaSapatos.controller;
 
 import com.lojaSapatos.enums.ShoeColor;
 import com.lojaSapatos.model.Shoe;
+import com.lojaSapatos.services.PdfService;
 import com.lojaSapatos.services.ShoeService;
 import com.lojaSapatos.util.LineMaker;
 import com.lojaSapatos.view.MenuView;
@@ -18,13 +19,14 @@ public class MainSystemController {
     private final MenuView menuView;
     private final ShoeService shoeService;
     private final Scanner scanner = new Scanner(System.in);
-
+    private  PdfService pdfService ;
     private  LineMaker lineMaker;
 
-    public MainSystemController(MenuView menuView, ShoeService shoeService, LineMaker lineMaker) {
+    public MainSystemController(MenuView menuView, ShoeService shoeService, LineMaker lineMaker,PdfService pdfService) {
         this.menuView = menuView;
         this.shoeService = shoeService;
         this.lineMaker = lineMaker;
+        this.pdfService = pdfService;
     }
 
 
@@ -64,7 +66,7 @@ public class MainSystemController {
 
             case "export doc":
             case "7":
-                System.out.println("📤 Exportando documento... (ainda não implementado)");
+                pdfService.createPDF("Relatorio.pdf","id:1");
                 break;
 
             case "8":
