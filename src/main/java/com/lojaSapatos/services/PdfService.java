@@ -21,6 +21,7 @@ public class PdfService {
             doc.open();
 
             createHeader(doc);
+            addLineSeparator(doc);
             createBodyPDF(doc, "Este é um relatório completo contendo todos os registros presentes na base de dados da NETSHOE©. " +
                     "O objetivo deste documento é apresentar, de forma clara e organizada, os dados dos produtos atualmente cadastrados " +
                     "no sistema, incluindo informações como nome, marca, tamanho, cor e demais atributos relevantes. " +
@@ -56,6 +57,13 @@ public class PdfService {
         bodyContent.setSpacingAfter(10f);
 
         doc.add(bodyContent);
+    }
+
+    //Cria a(s) divisória do documento
+    private void addLineSeparator(Document doc) throws DocumentException {
+        Paragraph lineSeparator  = new Paragraph("---------------------------------------------------------------------");
+        lineSeparator.setAlignment(Element.ALIGN_CENTER);
+        doc.add(lineSeparator);
     }
 
 }
