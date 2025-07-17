@@ -70,6 +70,7 @@ public class PdfService {
         bodyContent.setSpacingAfter(10f);
 
         doc.add(bodyContent);
+        doc.newPage();
     }
 
     // Cria a tabela de conteúdo
