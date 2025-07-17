@@ -83,20 +83,19 @@ public class PdfService {
         doc.add(title);
 
         // Colunas da tabela
-        PdfPTable table = new PdfPTable(5); // Nome, Marca, Tamanho
+        PdfPTable table = new PdfPTable(4); // Nome, Marca, Tamanho
         table.setWidthPercentage(100);
         table.setSpacingBefore(10f);
 
         // Cabeçalhos da tabela
-        addTableHeader(table, "Nome" ,"ID" , "Marca", "Tamanho","COR");
+        addTableHeader(table, "ID" ,"NAME" , "BRAND", "SIZE");
 
-        // Preenche os dados da tabela
-        for (Shoe shoe : shoes) {
+        shoes.forEach(shoe -> {
+            table.addCell(String.valueOf(shoe.getId()));
             table.addCell(shoe.getName());
             table.addCell(shoe.getBrand());
             table.addCell(String.valueOf(shoe.getSize()));
-            table.addCell(shoe.getBrand());
-        }
+        });
 
         doc.add(table);
     }

@@ -1,6 +1,5 @@
 package com.lojaSapatos.model;
 
-import com.itextpdf.text.pdf.PdfPCell;
 import com.lojaSapatos.enums.ShoeColor;
 import jakarta.persistence.*;
 
@@ -75,7 +74,7 @@ public class Shoe {
         this.size = size;
     }
 
-    public PdfPCell getShoeColor() {
+    public ShoeColor getShoeColor() {
         return shoeColor;
     }
 

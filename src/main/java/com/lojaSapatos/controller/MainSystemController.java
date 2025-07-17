@@ -86,7 +86,7 @@ public class MainSystemController {
 
         System.out.println("Cor do sapato : ");
         String colorShoe  = scanner.nextLine();
-        ShoeColor chosenColor =ShoeColor.valueOf(colorShoe) ;
+        ShoeColor chosenColor = ShoeColor.valueOf(colorShoe.toUpperCase());
 
         System.out.println("Marca do tênis : ");
         String brand = scanner.nextLine();
