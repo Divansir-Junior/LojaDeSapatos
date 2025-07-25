@@ -33,6 +33,7 @@ public class InputHandler {
         System.out.println("Número do tênis : ");
         int size = Integer.parseInt(sc.nextLine());
 
+
         Shoe shoe = new Shoe(name, brand, size);
         shoe.setShoeColor(shoeColor);
         shoeService.saveShoe(shoe);
