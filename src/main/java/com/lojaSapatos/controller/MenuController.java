@@ -1,6 +1,5 @@
 package com.lojaSapatos.controller;
 
-import com.lojaSapatos.view.Exit;
 import com.lojaSapatos.view.MainSystemView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -8,12 +7,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class MenuController {
 
-    private final Exit exit;
     private final MainSystemView mainSystemView;
 
     @Autowired
-    public MenuController(Exit exit, MainSystemView mainSystemView) {
-        this.exit = exit;
+    public MenuController( MainSystemView mainSystemView) {
         this.mainSystemView = mainSystemView;
     }
 
@@ -27,7 +24,6 @@ public class MenuController {
             case "exit":
             case "1":
                 System.out.println("👋 Você saiu do sistema.");
-                exit.exitMenu();
                 break;
             default:
                 System.out.println("❌ Opção inválida. Tente novamente.");
